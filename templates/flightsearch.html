@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+<title>PACKITUP/user</title>
+<head>
+{% load static %}
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto Sans TC">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Noto Sans TC", sans-serif}
+</style>
+<body class="w3-light-grey w3-content" style="max-width:1600px">
+
+</head>
+<!-- header -->
+
+<!-- logo attribute-->
+<style>
+.header img {
+  float: left;
+  width: 100px;
+  height: 100px;
+  background: #555;
+}
+
+.dropTO {
+  background-color: teal ;
+  color: white;
+  padding: 15px;
+  font-size: 12px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropFROM {
+  background-color: teal ;
+  color: white;
+  padding: 15px;
+  font-size: 12px;
+  border: none;
+  cursor: pointer;
+  left:10px;
+}
+
+.dropNUMBER {
+  background-color: teal ;
+  color: white;
+  padding: 15px;
+  font-size: 12px;
+  border: none;
+  cursor: pointer;
+  left:20px;
+}
+
+.sub  {
+  background-color: teal ;
+  color: white;
+  width:50%;
+  font-size: 12px;
+  border: none;
+  cursor: pointer;
+  position:absolute;
+  left:300px;
+  padding:15px;
+}
+
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropTO {
+  background-color: grey;
+}
+</style>
+
+<body>
+<div class="w3-container ul w3-teal color:#111111 header">
+  <img src="{% static 'mainLogo1.png' %}">
+  <h1 style="font-size:45px;">&nbsp;&nbsp;&nbsp;PACKITUP</h1>
+  </div>
+
+  <div class="w3-container">
+  <h2>Flight details</h2>
+  
+  <form action="/flightsearch/" method='POST' target="_blank">
+    <select class="dropTO"  name="toDest"  id="">
+      <option value="" disabled selected hidden>FROM</option>
+      <option value="Andaman">Andaman</option>
+      <option value="Delhi">Delhi</option>
+      <option value="Thiruvananthapuram">Thiruvananthapuram</option>
+      <option value="Chennai">Chennai</option>
+      <option value="Bangalore">Bangalore</option>
+      <option value="Mumbai">Mumbai</option>
+      <option value="Kanyakumari">Kanyakumari</option>
+      <option value="Srinagar">Srinagar</option>
+      <option value="Kolkata">Kolkata</option>  
+    </select>
+
+
+
+    <select class="dropFROM" name="fromDest" id="">
+      <option value="" disabled selected hidden>TO</option>
+      <option value="Andaman">Andaman</option>
+      <option value="Delhi">Delhi</option>
+      <option value="Thiruvananthapuram">Thiruvananthapuram</option>
+      <option value="Chennai">Chennai</option>
+      <option value="Bangalore">Bangalore</option>
+      <option value="Mumbai">Mumbai</option>
+      <option value="Kanyakumari">Kanyakumari</option>
+      <option value="Srinagar">Srinagar</option>
+      <option value="Kolkata">Kolkata</option>
+    </select>
+
+    <select class="dropNUMBER" name="noOfPeople" id="">
+      <option value="" disabled selected hidden>NUMBER OF PASSENGERS</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+    </select>
+
+    <select class="dropNUMBER" name="flightClass" id="">
+        <option value="" disabled selected hidden>CLASS</option>
+        <option value="economy">economy</option>
+        <option value="business">business</option>
+      
+      </select>
+
+
+        Date:
+        <input type="date" name="date">
+      </form>
+  
+
+<!-- First Photo Grid-->
+  <div class="w3-row-padding">
+    <div class="w3-third w3-container w3-margin-bottom">
+      <img src="{% static 'andaman.png' %}" alt="Andaman" style="width:100%" class="w3-hover-opacity">
+      <div class="w3-container w3-white">
+        <p><b>Andaman</b></p>
+        <p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
+      </div>
+    </div>
+    <div class="w3-third w3-container w3-margin-bottom">
+      <img src="{% static 'kerala.jpg' %}" alt="Kerala" style="width:100%" class="w3-hover-opacity">
+      <div class="w3-container w3-white">
+        <p><b>kerala</b></p>
+        <p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
+      </div>
+    </div>
+    <div class="w3-third w3-container">
+      <img src="{% static 'udaipur.jpg' %}" alt="Udaipur" style="width:100%" class="w3-hover-opacity">
+      <div class="w3-container w3-white">
+        <p><b>Udaipur</b></p>
+        <p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Second Photo Grid-->
+  <div class="w3-row-padding">
+    <div class="w3-third w3-container w3-margin-bottom">
+      <img src="{% static 'jaipur.png' %}" alt="Norway" style="width:100%" class="w3-hover-opacity">
+      <div class="w3-container w3-white">
+        <p><b>Lorem Ipsum</b></p>
+        <p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
+      </div>
+    </div>
+    <div class="w3-third w3-container w3-margin-bottom">
+      <img src="/w3images/p2.jpg" alt="Norway" style="width:100%" class="w3-hover-opacity">
+      <div class="w3-container w3-white">
+        <p><b>Lorem Ipsum</b></p>
+        <p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
+      </div>
+    </div>
+    <div class="w3-third w3-container">
+      <img src="/w3images/p3.jpg" alt="Norway" style="width:100%" class="w3-hover-opacity">
+      <div class="w3-container w3-white">
+        <p><b>Lorem Ipsum</b></p>
+        <p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
+      </div>
+    </div>
+  </div>
+<!-- Third Photo Grid-->
+  <div class="w3-row-padding">
+    <div class="w3-third w3-container w3-margin-bottom">
+      <img src="/w3images/p1.jpg" alt="Norway" style="width:100%" class="w3-hover-opacity">
+      <div class="w3-container w3-white">
+        <p><b>Lorem Ipsum</b></p>
+        <p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
+      </div>
+    </div>
+    <div class="w3-third w3-container w3-margin-bottom">
+      <img src="/w3images/p2.jpg" alt="Norway" style="width:100%" class="w3-hover-opacity">
+      <div class="w3-container w3-white">
+        <p><b>Lorem Ipsum</b></p>
+        <p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
+      </div>
+    </div>
+    <div class="w3-third w3-container">
+      <img src="/w3images/p3.jpg" alt="Norway" style="width:100%" class="w3-hover-opacity">
+      <div class="w3-container w3-white">
+        <p><b>Lorem Ipsum</b></p>
+        <p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
+      </div>
+    </div>
+  </div>
+
+
+  <button class="sub" type="submit">SUBMIT</button>                                   
+
+
+  
+   </form>
+ 
+   
+  </div>
+
+</head>
+
+
+
+</body>
+</html>
